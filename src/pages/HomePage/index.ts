@@ -1,0 +1,1 @@
+export { HomePageAsynk } from './ui/HomePageAsynk'
