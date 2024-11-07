@@ -1,0 +1,56 @@
+.WorkSchema {
+    margin-top: 100px;
+}
+
+.title {
+    font: var(--font-xl);
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    margin-bottom: 120px;
+}
+
+.cardWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 80px;
+    width: 100%;
+}
+
+.card {
+    width: 31%;
+    padding: 45px 30px;
+    border: 1px solid var(--primary-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.step {
+    font: var(--font-l);
+    position: absolute;
+    padding: 5px;
+    top: -60px;
+    left: -14px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.cardTitle {
+    font: var(--font-s);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cardSuptitle {
+    font: var(--font-s);
+    color: var(--secondary-text);
+}
+
+.textContent {
+    width: 70%;
+}

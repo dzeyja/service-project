@@ -1,3 +1,8 @@
+.Intro {
+    background-color: #F8F8F8;
+    height: 100vh;
+}
+
 .intro {
     width: 850px;
     position: absolute;
@@ -10,7 +15,6 @@
 }
 
 .introWrapper {
-    margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;

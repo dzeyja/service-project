@@ -1,0 +1,41 @@
+.Reviews {
+    margin-top: 100px;
+}
+
+.title {
+    font: var(--font-xl);
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 100px;
+}
+
+.reviewsWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.review {
+    width: 31%;
+    border: 1px solid var(--main-blue);
+    padding: 35px;
+    position: relative;
+}
+
+.reviewTitle {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.reviewText {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #AFAFAF;
+}
+
+.img {
+    position: absolute;
+    top: -52px;
+    left: 36%;
+}

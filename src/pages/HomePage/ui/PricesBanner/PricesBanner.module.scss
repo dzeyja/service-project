@@ -1,0 +1,46 @@
+.PricesBanner {
+    margin-top: 100px;
+    background-color: var(--main-blue);
+    padding: 85px 0;
+    color: #fff;
+}
+
+.title {
+    text-align: center;
+    font: var(--font-xl);
+    font-weight: 700;
+    margin-bottom: 44px;
+}
+
+.title span {
+    color: var(--primary-red);
+}
+
+.cardWrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card {
+    padding: 30px;
+    width: 23%;
+    background-color: #fff;
+}
+
+.cardTitle {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.cardSuptitle {
+    font-size: 14px;
+    color: #AFAFAF;
+    margin-bottom: 36px;
+}
+
+.price {
+    color: var(--primary-red);
+}

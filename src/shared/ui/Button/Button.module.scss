@@ -3,10 +3,39 @@
 }
 
 .primary {
+    background-color: var(--main-blue);
+}
+
+.red {
+    background-color: var(--primary-red);
+}
+
+.square {
+    padding: 20px;
+}
+
+.square.size_m {
+    font: var(--font-m);
+    font-weight: 700;
+    padding: 12px 25px;
+    color: #fff;
+    border-radius: 40px;
+    outline: none;
+}
+
+.square.size_l {
     font: var(--font-l);
     font-weight: 700;
+    padding: 12px 35px;
+    color: #fff;
+    border-radius: 40px;
+    outline: none;
+}
+
+.square.size_xl {
+    font: var(--font-xl);
+    font-weight: 700;
     padding: 15px 50px;
-    background-color: var(--main-blue);
     color: #fff;
     border-radius: 40px;
     outline: none;
