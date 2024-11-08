@@ -1,11 +1,18 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import cls from './Navbar.module.scss'
+import { LoginModal } from "features/AuthByEmail"
+import { useState } from "react"
 
 interface NavbarProps {
     className?: string
 }
 
 export function Navbar({ className }: NavbarProps) {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleOpen = () => {
+        setIsOpen(true)
+    }
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
@@ -20,9 +27,13 @@ export function Navbar({ className }: NavbarProps) {
                         <div>About Us</div>
                         <div>Hello</div>
                     </div>
-                    <div className={cls.login}>
+                    <div onClick={handleOpen} className={cls.login}>
                             Log in
                     </div>
+                    <LoginModal 
+                        isOpen={isOpen}
+                        onClose={() =>setIsOpen(false)}
+                    />
                 </div>
             </div>
         </div>
