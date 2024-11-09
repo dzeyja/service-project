@@ -1,0 +1,11 @@
+.Input {
+    font: var(--font-m);
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid var(--main-blue);
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}

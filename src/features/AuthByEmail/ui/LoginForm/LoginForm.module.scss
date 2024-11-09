@@ -3,6 +3,14 @@
     flex-direction: column;
 }
 
-.LoginForm input {
+.input {
     width: 400px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font: var(--font-l);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
 }

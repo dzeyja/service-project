@@ -27,8 +27,13 @@ export function Navbar({ className }: NavbarProps) {
                         <div>About Us</div>
                         <div>Hello</div>
                     </div>
-                    <div onClick={handleOpen} className={cls.login}>
-                            Log in
+                    <div className={cls.auth}>
+                        <div>
+                            Sign in
+                        </div>
+                        <div onClick={handleOpen} className={cls.login}>
+                                Log in
+                        </div>
                     </div>
                     <LoginModal 
                         isOpen={isOpen}
