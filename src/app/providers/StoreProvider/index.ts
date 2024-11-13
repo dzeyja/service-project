@@ -1,5 +1,7 @@
 export {
-    StateSchema
+    StateSchema,
+    ReduxWithReducerManager,
+    StateSchemaKey
 } from './config/StateSchema'
 
 export {

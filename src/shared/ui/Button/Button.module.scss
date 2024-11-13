@@ -1,5 +1,14 @@
 .Button {
-    padding: 15px;
+    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 40px;
+    color: #fff;
+    opacity: 1;
+}
+
+.disabled {
+    opacity: 0.5;
+    color: red;
 }
 
 .primary {
@@ -19,7 +28,6 @@
     font-weight: 700;
     padding: 12px 25px;
     color: #fff;
-    border-radius: 40px;
     outline: none;
 }
 
@@ -28,7 +36,6 @@
     font-weight: 700;
     padding: 12px 35px;
     color: #fff;
-    border-radius: 40px;
     outline: none;
 }
 
@@ -37,6 +44,5 @@
     font-weight: 700;
     padding: 15px 50px;
     color: #fff;
-    border-radius: 40px;
     outline: none;
 }

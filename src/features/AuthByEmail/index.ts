@@ -3,7 +3,6 @@ export {
 } from './module/types/LoginSchema'
 
 export {
-    loginReducer,
     loginActions
 } from './module/slice/loginSlice'
 

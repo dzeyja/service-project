@@ -1,0 +1,29 @@
+.SignInForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font: var(--font-l);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.error {
+    font: var(--font-m);
+    color: var(--primary-red);
+    margin-bottom: 10px;
+}
+
+.message {
+    font: var(font-m);
+    font-weight: 700;
+    color: var(--succesful);
+    margin-bottom: 10px;
+}

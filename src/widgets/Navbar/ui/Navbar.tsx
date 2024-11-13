@@ -2,16 +2,30 @@ import { classNames } from "shared/lib/classNames/classNames"
 import cls from './Navbar.module.scss'
 import { LoginModal } from "features/AuthByEmail"
 import { useState } from "react"
+import { SignInModal } from "features/SignInByEmail"
+import { useDispatch, useSelector } from "react-redux"
+import { getUser, getUserEmail, userActions } from "entities/User"
 
 interface NavbarProps {
     className?: string
 }
 
 export function Navbar({ className }: NavbarProps) {
-    const [isOpen, setIsOpen] = useState(false)
+    const [loginIsOpen, setLoginIsOpen] = useState(false)
+    const [signinIsOpen, setSigninIsOpen] = useState(false)
+    const userEmail = useSelector(getUserEmail)
+    const dispatch = useDispatch()
 
-    const handleOpen = () => {
-        setIsOpen(true)
+    const handleLoginOpen = () => {
+        setLoginIsOpen(true)
+    }
+
+    const handleSigninOpen = () => {
+        setSigninIsOpen(true)
+    }
+
+    const logout = () => {
+        dispatch(userActions.logout())
     }
 
     return (
@@ -21,23 +35,31 @@ export function Navbar({ className }: NavbarProps) {
                     <div className={cls.logo}>
                         INDESIT
                     </div>
-                    <div className={cls.links}>
-                        <div>Home</div>
-                        <div>Contacts</div>
-                        <div>About Us</div>
-                        <div>Hello</div>
-                    </div>
-                    <div className={cls.auth}>
-                        <div>
-                            Sign in
+                    {userEmail ? 
+                        <>
+                            <div className={cls.user}>
+                                {userEmail}
+                            </div>
+                            <div className={cls.logout} onClick={logout}>
+                                Выйти
+                            </div> 
+                        </> :
+                        <div className={cls.auth}>
+                            <div className={cls.singIn} onClick={handleSigninOpen}>
+                                Войти
+                            </div>
+                            <div onClick={handleLoginOpen} className={cls.login}>
+                                Зарегестрироватся
+                            </div>
                         </div>
-                        <div onClick={handleOpen} className={cls.login}>
-                                Log in
-                        </div>
-                    </div>
+                    }
                     <LoginModal 
-                        isOpen={isOpen}
-                        onClose={() =>setIsOpen(false)}
+                        isOpen={loginIsOpen}
+                        onClose={() => setLoginIsOpen(false)}
+                    />
+                    <SignInModal 
+                        isOpen={signinIsOpen}
+                        onClose={() => setSigninIsOpen(false)}
                     />
                 </div>
             </div>

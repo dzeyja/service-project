@@ -19,6 +19,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     theme?: ButtonTheme
     square?: boolean
     size?: ButtonSize
+    disabled?: boolean
 }
 
 export function Button(props:ButtonProps) {
@@ -28,11 +29,13 @@ export function Button(props:ButtonProps) {
         theme, 
         square,
         size,
+        disabled,
         ...otherProps
     } = props
 
     const mods:Record<string, boolean> = {
-        [cls.square]: square
+        [cls.square]: square,
+        [cls.disabled]: disabled
     }
 
     return (

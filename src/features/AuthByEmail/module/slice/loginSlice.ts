@@ -5,6 +5,8 @@ import { loginByEmail } from "../services/loginByEmail";
 const initialState: LoginSchema = {
     email: '',
     password: '',
+    error: '',
+    message: '',
     isLoading: false
 }
 
@@ -17,6 +19,12 @@ const loginSlice = createSlice({
         },
         setPassword: (state, action: PayloadAction<string>) => {
             state.password = action.payload
+        },
+        clearMessage: (state) => {
+            state.message = ''
+        },
+        clearError: (state) => {
+            state.error = ''
         }
     },
     extraReducers: (build) => {
@@ -24,11 +32,13 @@ const loginSlice = createSlice({
             .addCase(loginByEmail.pending, (state) => {
                 state.isLoading = true
             })
-            .addCase(loginByEmail.fulfilled, (state) => {
+            .addCase(loginByEmail.fulfilled, (state, action) => {
                 state.isLoading = false
+                state.message = action.payload.message
             })
-            .addCase(loginByEmail.rejected, (state) => {
+            .addCase(loginByEmail.rejected, (state, action) => {
                 state.isLoading = false
+                state.error = action.payload
             })
     }
 })

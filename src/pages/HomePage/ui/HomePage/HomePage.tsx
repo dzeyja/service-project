@@ -6,6 +6,7 @@ import { PricesBanner } from "../PricesBanner/PricesBanner"
 import { WorkSchema } from "../WorkSchema/WorkSchema"
 import { Discount } from "../Discount/Discount"
 import { Reviews } from "../Reviews/Reviews"
+import { OrderForm } from "../OrderForm/OrderForm"
 
 interface HomePageProps {
     className?: string
@@ -21,6 +22,7 @@ export default function HomePage({ className }: HomePageProps) {
                 <WorkSchema />
                 <Discount />
                 <Reviews />
+                <OrderForm />
             </div>
     )
 }
