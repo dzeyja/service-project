@@ -52,3 +52,16 @@
     margin-left: 15px;
     cursor: pointer;
 }
+
+.bonus {
+    margin-left: 25px;
+    font: var(--font-m);
+    color: red;
+}
+
+.number {
+    font: var(--font-m);
+    color: var(--main-blue);
+    font-weight: 700;
+    margin-left: 20%;
+}

@@ -7,6 +7,7 @@ import { WorkSchema } from "../WorkSchema/WorkSchema"
 import { Discount } from "../Discount/Discount"
 import { Reviews } from "../Reviews/Reviews"
 import { OrderForm } from "../OrderForm/OrderForm"
+import Map from "shared/ui/Map/Map"
 
 interface HomePageProps {
     className?: string
@@ -23,6 +24,7 @@ export default function HomePage({ className }: HomePageProps) {
                 <Discount />
                 <Reviews />
                 <OrderForm />
+                <Map />
             </div>
     )
 }

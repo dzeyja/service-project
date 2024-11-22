@@ -5,6 +5,7 @@ import { useState } from "react"
 import { SignInModal } from "features/SignInByEmail"
 import { useDispatch, useSelector } from "react-redux"
 import { getUser, getUserEmail, userActions } from "entities/User"
+import { getBonus } from "entities/Bonus/model/selectors/getBonus/getBonus"
 
 interface NavbarProps {
     className?: string
@@ -14,6 +15,7 @@ export function Navbar({ className }: NavbarProps) {
     const [loginIsOpen, setLoginIsOpen] = useState(false)
     const [signinIsOpen, setSigninIsOpen] = useState(false)
     const userEmail = useSelector(getUserEmail)
+    const bonus = useSelector(getBonus)
     const dispatch = useDispatch()
 
     const handleLoginOpen = () => {
@@ -33,7 +35,20 @@ export function Navbar({ className }: NavbarProps) {
             <div className="container">
                 <div className={cls.header}>
                     <div className={cls.logo}>
-                        INDESIT
+                        INDESIT 
+                    </div>
+                    <div>
+                        {userEmail ?
+                            <div className={cls.bonus}>
+                                {bonus} бонусов
+                            </div> : 
+                            <div className={cls.bonus}>
+                                Бонусы доступны после регистраций
+                            </div>
+                        }
+                    </div>
+                    <div className={cls.number}>
+                        Горячяя линия: +7 (700) 707 7707
                     </div>
                     {userEmail ? 
                         <>

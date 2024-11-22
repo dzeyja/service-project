@@ -4,6 +4,8 @@ import { useRef } from "react"
 import emailjs from '@emailjs/browser';
 import { Input } from "shared/ui/Input/Input";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
+import { useDispatch } from "react-redux";
+import { bonusActions } from "entities/Bonus";
 
 
 interface OrderFormProps {
@@ -12,9 +14,11 @@ interface OrderFormProps {
 
 export function OrderForm({ className }: OrderFormProps) {
     const form = useRef();
+    const dispatch = useDispatch()
 
     const sendEmail = (e: any) => {
         e.preventDefault();
+        dispatch(bonusActions.incrementBonus())
 
         emailjs
         .sendForm('service_mmo6uzq', 'template_4n125dg', form.current, {
@@ -42,10 +46,16 @@ export function OrderForm({ className }: OrderFormProps) {
                     name="user_name"
                 />
                 <Input 
+                    className={cls.hiddenInput}
                     placeholder="Email" 
                     type='email' 
-                    value="zharylkasynov_d@mail.ru"
+                    value="zhalgasaitbay@gmail.com"
                     name="user_email"
+                />
+                <Input 
+                    type='number'
+                    placeholder="Номер" 
+                    name="message"
                 />
                 <Input 
                     placeholder="Сообщение" 
