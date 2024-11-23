@@ -6,6 +6,7 @@ import { SignInModal } from "features/SignInByEmail"
 import { useDispatch, useSelector } from "react-redux"
 import { getUser, getUserEmail, userActions } from "entities/User"
 import { getBonus } from "entities/Bonus/model/selectors/getBonus/getBonus"
+import { AddComForm } from "features/AddComment"
 
 interface NavbarProps {
     className?: string

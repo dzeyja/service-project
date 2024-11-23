@@ -20,6 +20,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
     square?: boolean
     size?: ButtonSize
     disabled?: boolean
+    submit?: boolean
 }
 
 export function Button(props:ButtonProps) {
@@ -30,6 +31,7 @@ export function Button(props:ButtonProps) {
         square,
         size,
         disabled,
+        submit,
         ...otherProps
     } = props
 
@@ -39,7 +41,7 @@ export function Button(props:ButtonProps) {
     }
 
     return (
-        <button {...otherProps} className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}>
+        <button type={submit ? 'submit' : undefined} {...otherProps} className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}>
             {children}
         </button>
     )

@@ -3,12 +3,23 @@ import cls from './Intro.module.scss'
 import introImg from 'shared/assets/img/Group 2 (1).png'
 import introBg from 'shared/assets/img/Rectangle 57.png'
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 interface IntroProps {
     className?: string
 }
 
 export function Intro({ className }: IntroProps) {
+    const [comments, setComments] = useState([])
+
+    useEffect(() => {
+        async () => {
+            const response = await axios.get('http://localhost:3000/comments')
+            console.log(response.data)
+            setComments(response.data)
+        }
+    }, [])
 
     return (
         <div className={classNames(cls.Intro, {}, [className])}>
@@ -46,6 +57,9 @@ export function Intro({ className }: IntroProps) {
                                 <div className={cls.text}>
                                     года<br/> <span>гарантии</span>
                                 </div>
+                                {comments.map((el) => (
+                                    <div>{el.text}</div>
+                                ))}
                             </div>
                         </div>
                     </div>

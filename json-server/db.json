@@ -1,0 +1,81 @@
+{
+  "masters": [
+    {
+      "id": "1",
+      "name": "Erasyl"
+    },
+    {
+      "id": "2",
+      "name": "Sanzhar"
+    },
+    {
+      "id": "3",
+      "name": "Daulet"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "masterId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "masterId": "1"
+    },
+    {
+      "text": "najsndasd",
+      "masterId": "1",
+      "id": "8aUq2WG"
+    },
+    {
+      "text": "хороший мастер!",
+      "masterId": "1",
+      "id": "kkqvr_S"
+    },
+    {
+      "text": "knsdolfnsdf",
+      "masterId": "1",
+      "id": "f9io3JJ"
+    },
+    {
+      "text": "njndjdsfh",
+      "masterId": "1",
+      "id": "7CYQNg9"
+    },
+    {
+      "text": "Hellow ",
+      "masterId": "2",
+      "id": "U_V7xhs"
+    },
+    {
+      "text": "Hello world",
+      "masterId": "2",
+      "id": "I_4kUCf"
+    },
+    {
+      "text": "к котакбас",
+      "masterId": "3",
+      "id": "aNE1PBK"
+    },
+    {
+      "text": "к котакбас",
+      "masterId": "3",
+      "id": "EjP-9EB"
+    },
+    {
+      "text": "jnjhbgvfcfg",
+      "masterId": "3",
+      "id": "3ezPavy"
+    },
+    {
+      "text": "jnjdsf",
+      "masterId": "2",
+      "id": "gPNLuCR"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

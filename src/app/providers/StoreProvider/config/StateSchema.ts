@@ -1,6 +1,9 @@
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { BonusSchema } from "entities/Bonus";
+import { CommentSchema } from "entities/Comments";
+import { MasterSchema } from "entities/Masters";
 import { UserSchema } from "entities/User";
+import { AddComSchema } from "features/AddComment";
 import { LoginSchema } from "features/AuthByEmail";
 import { SignInSchema } from "features/SignInByEmail";
 
@@ -9,6 +12,9 @@ export interface StateSchema {
     loginForm?: LoginSchema
     signInForm?: SignInSchema
     bonus: BonusSchema
+    comment: CommentSchema
+    addCom: AddComSchema
+    masters: MasterSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

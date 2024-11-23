@@ -8,6 +8,7 @@ import { Discount } from "../Discount/Discount"
 import { Reviews } from "../Reviews/Reviews"
 import { OrderForm } from "../OrderForm/OrderForm"
 import Map from "shared/ui/Map/Map"
+import { MastersList } from "../Masters/MastersList/MastersList"
 
 interface HomePageProps {
     className?: string
@@ -24,6 +25,7 @@ export default function HomePage({ className }: HomePageProps) {
                 <Discount />
                 <Reviews />
                 <OrderForm />
+                <MastersList />
                 <Map />
             </div>
     )

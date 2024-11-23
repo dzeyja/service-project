@@ -1,4 +1,5 @@
 import { userActions } from 'entities/User'
+import { AddComForm } from 'features/AddComment'
 import { HomePageAsynk } from 'pages/HomePage'
 import { Suspense, useEffect } from 'react'
 import { useDispatch } from 'react-redux'

@@ -1,0 +1,14 @@
+.MastersList {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.masterCard {
+    font: var(--font-l);
+    padding: 25px;
+    text-align: center;
+    width: 32%;
+    height: 250px;
+    border: 1px solid var(--main-blue);
+}

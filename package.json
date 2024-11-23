@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production"
+    "build:prod": "webpack --env mode=production",
+    "start:json": "npx json-server ./json-server/db.json --port 5000"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@reduxjs/toolkit": "^1.8.0",
+    "axios": "^0.26.1",
     "firebase": "^9.23.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
