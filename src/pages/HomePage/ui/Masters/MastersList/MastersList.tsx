@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./MastersList.module.scss";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCom, getComment } from "entities/Comments";
 import { getMasters, getMastersState } from "entities/Masters";
@@ -10,7 +10,7 @@ interface MastersListProps {
   className?: string;
 }
 
-export function MastersList({ className }: MastersListProps) {
+export const MastersList = memo(({ className }: MastersListProps) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +20,6 @@ export function MastersList({ className }: MastersListProps) {
 
   const masters = useSelector(getMastersState);
   const comments = useSelector(getCom);
-  console.log(comments)
 
   return (
     <div className="container">
@@ -44,11 +43,11 @@ export function MastersList({ className }: MastersListProps) {
                   <div className={cls.noComments}>No comments yet</div>
                 )}
               </div>
-              <AddComForm masterId={master.id}/>
+              <AddComForm className={cls.addCom} masterId={master.id}/>
             </div>
           );
         })}
       </div>
     </div>
   );
-}
+})

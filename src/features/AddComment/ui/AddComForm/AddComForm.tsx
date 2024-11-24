@@ -3,8 +3,6 @@ import cls from './AddComForm.module.scss'
 import { Input } from "shared/ui/Input/Input"
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
 import { useDispatch, useSelector } from "react-redux"
-import { getComText } from "../../module/selecors/getComText/getComText"
-import { addCommentActions } from "../../module/slice/addComSlice"
 import { addComment } from "../../module/services/addComment"
 import { useState } from "react"
 
@@ -22,13 +20,17 @@ export function AddComForm({ className, masterId }: AddComFormProps) {
     }
 
     const onClickk = (e: any) => {
+        window.location.reload()
+        e.preventDefault()
         dispatch(addComment({text, masterId}))
+        setText('')
     }
 
     return (
-        <div className={classNames(cls.AddComForm, {}, [className])}>
+        <div className={classNames(cls.AddComForm, {}, [])}>
             <form>
                 <Input 
+                    className={classNames(cls.input, {}, [className])}
                     value={text} 
                     placeholder='Комментарий' 
                     onChange={onChange}
