@@ -20,10 +20,13 @@ export function AddComForm({ className, masterId }: AddComFormProps) {
     }
 
     const onClickk = (e: any) => {
-        window.location.reload()
         e.preventDefault()
-        dispatch(addComment({text, masterId}))
-        setText('')
+        setTimeout(() => {
+            window.location.reload()
+            dispatch(addComment({text, masterId}))
+            setText('')
+        }, 2000)
+        
     }
 
     return (

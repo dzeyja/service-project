@@ -15,7 +15,7 @@ export const addComment = createAsyncThunk<ThunkReturn, ThunkArg>(
     'comment/addComment',
     async ({text, masterId}, thunkAPI) => {
         try {
-            const response = await axios.post('http://localhost:5000/comments', {
+            const response = await axios.post('https://json-server-service.onrender.com/comments', {
                 text, masterId
             })
             console.log(response.data)
