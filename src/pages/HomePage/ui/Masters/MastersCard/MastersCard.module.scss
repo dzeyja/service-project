@@ -4,17 +4,33 @@
     text-align: center;
     width: 32%;
     min-height: 250px;
-    overflow-y: auto;
+    overflow: hidden;
     border: 1px solid var(--main-blue);
 }
 
 .comment {
+    padding: 8px;
+    text-align: left;
     margin-bottom: 7px;
     border: 1px solid var(--main-blue);
 }
 
+.userName {
+    font: var(--font-m);
+    font-weight: 700;
+}
+
+.text {
+    font: var(--font-m);
+}
+
 .addCom {
     width: 100%;
+}
+
+.commentsSection {
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .desc {

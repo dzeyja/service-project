@@ -5,6 +5,7 @@ import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
 import { useDispatch, useSelector } from "react-redux"
 import { addComment } from "../../module/services/addComment"
 import { FormEvent, useState } from "react"
+import { getUser } from "entities/User"
 
 interface AddComFormProps {
     className?: string
@@ -14,6 +15,7 @@ interface AddComFormProps {
 export function AddComForm({ className, masterId }: AddComFormProps) {
     const [text, setText] = useState('')
     const [isSubmitted, setIsSubmitted] = useState(false)
+    const user = useSelector(getUser)
     const dispatch = useDispatch()
 
     const onChange = (val: string) => {
@@ -26,9 +28,12 @@ export function AddComForm({ className, masterId }: AddComFormProps) {
         setIsSubmitted(true)
 
         try {
-            await dispatch(addComment({text, masterId}))
+            if (user?.email) {
+                await dispatch(addComment({text, masterId, username: user.email}))
+            } else {
+                await dispatch(addComment({text, masterId, username: 'Гость'}))
+            }
             setText('')
-
         } catch(e) {
             console.error('Error comment')
         } finally {

@@ -10,16 +10,17 @@ interface ThunkReturn {
 interface ThunkArg {
     text: string
     masterId: number
+    username: string
 }
 
 export const addComment = createAsyncThunk<ThunkReturn, ThunkArg>(
     'comment/addComment',
-    async ({text, masterId}, thunkAPI) => {
+    async ({text, masterId, username}, thunkAPI) => {
         try {
             const response = await axios.post('https://json-server-service.onrender.com/comments', {
-                text, masterId
+                text, masterId, username
             })
-            thunkAPI.dispatch(commentActions.setAddComment({text, masterId}))
+            thunkAPI.dispatch(commentActions.setAddComment({text, masterId, username}))
 
             return response.data
         } catch (error) {

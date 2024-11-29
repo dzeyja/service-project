@@ -7,7 +7,7 @@ export const getMasters = createAsyncThunk<Master[]>(
     'masters/getMasters',
     async (_, thunkAPI) => {
         try {
-            const response = await axios.get('https://json-server-service.onrender.com/masters')
+            const response = await axios.get('http://localhost:5000/masters')
             console.log(response.data)
             return response.data
         } catch (error) {
