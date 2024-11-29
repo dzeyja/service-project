@@ -3,12 +3,13 @@ import cls from './FreeBanner.module.scss'
 import washMash from 'shared/assets/img/6414573-1569396312 2.png'
 import man from 'shared/assets/img/man 1.png'
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
+import { memo } from "react"
 
 interface FreeBannerProps {
     className?: string
 }
 
-export function FreeBanner({ className }: FreeBannerProps) {
+export const FreeBanner = memo(({ className }: FreeBannerProps) => {
 
     return (
         <div className={classNames(cls.FreeBanner, {}, [className])}>
@@ -42,4 +43,4 @@ export function FreeBanner({ className }: FreeBannerProps) {
             </div>
         </div>
     )
-}
+})

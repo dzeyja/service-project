@@ -1,11 +1,12 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import cls from './PricesBanner.module.scss'
+import { memo } from "react"
 
 interface PricesBannerProps {
     className?: string
 }
 
-export function PricesBanner({ className }: PricesBannerProps) {
+export const PricesBanner = memo(({ className }: PricesBannerProps) => {
 
     return (
         <div className={classNames(cls.PricesBanner, {}, [className])}>
@@ -76,4 +77,4 @@ export function PricesBanner({ className }: PricesBannerProps) {
             </div>
         </div>
     )
-}
+})

@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import cls from './OrderForm.module.scss'
-import { useRef } from "react"
+import { memo, useRef } from "react"
 import emailjs from '@emailjs/browser';
 import { Input } from "shared/ui/Input/Input";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
@@ -12,7 +12,7 @@ interface OrderFormProps {
     className?: string
 }
 
-export function OrderForm({ className }: OrderFormProps) {
+export const OrderForm = memo(({ className }: OrderFormProps) => {
     const form = useRef();
     const dispatch = useDispatch()
 
@@ -38,7 +38,7 @@ export function OrderForm({ className }: OrderFormProps) {
         <div className={classNames(cls.OrderForm, {}, [className])}>
             <form ref={form} className={cls.form}>
                 <div className={cls.title}>
-                    Оставьте заявку
+                    Оставьте заявку на ремонт
                 </div>
                 <Input 
                     placeholder="Имя" 
@@ -58,7 +58,11 @@ export function OrderForm({ className }: OrderFormProps) {
                     name="message"
                 />
                 <Input 
-                    placeholder="Сообщение" 
+                    placeholder="Адресс" 
+                    name="message"
+                />
+                <Input 
+                    placeholder="Описание проблемы" 
                     name="message"
                 />
                 <Button 
@@ -67,9 +71,9 @@ export function OrderForm({ className }: OrderFormProps) {
                     size={ButtonSize.M} 
                     onClick={sendEmail}
                 >
-                    Отправить заявку
+                    Оставить заявку
                 </Button>
             </form>
          </div>
    )
-}
+})

@@ -4,7 +4,8 @@ export {
 } from './module/slice/masterSlice'
 
 export {
-    MasterSchema
+    MasterSchema,
+    Master
 } from './module/types/MasterSchema'
 
 export {

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCom, getComment } from "entities/Comments";
 import { getMasters, getMastersState } from "entities/Masters";
 import { AddComForm } from "features/AddComment";
+import { MastersCard } from "../MastersCard/MastersCard";
 
 interface MastersListProps {
   className?: string;
@@ -29,23 +30,11 @@ export const MastersList = memo(({ className }: MastersListProps) => {
             (comment) => comment.masterId === master.id
           );
 
-          return (
-            <div key={master.id} className={cls.masterCard}>
-              <h3>{master.name}</h3>
-              <div className={cls.commentsSection}>
-                {filteredComments.length > 0 ? (
-                  filteredComments.map((comment) => (
-                    <div key={comment.id} className={cls.comment}>
-                      {comment.text}
-                    </div>
-                  ))
-                ) : (
-                  <div className={cls.noComments}>No comments yet</div>
-                )}
-              </div>
-              <AddComForm className={cls.addCom} masterId={master.id}/>
-            </div>
-          );
+          return <MastersCard 
+                    key={master.id}
+                    master={master} 
+                    filteredComments={filteredComments}
+                 />
         })}
       </div>
     </div>

@@ -1,5 +1,6 @@
 export {
-    CommentSchema
+    CommentSchema,
+    Comment
 } from './module/types/CommentSchema'
 
 export {

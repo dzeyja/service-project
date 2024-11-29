@@ -1,0 +1,17 @@
+.masterCard {
+    font: var(--font-l);
+    padding: 25px;
+    text-align: center;
+    width: 32%;
+    min-height: 250px;
+    border: 1px solid var(--main-blue);
+}
+
+.comment {
+    margin-bottom: 7px;
+    border: 1px solid var(--main-blue);
+}
+
+.addCom {
+    width: 100%;
+}

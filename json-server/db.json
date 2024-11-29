@@ -1,148 +1,26 @@
 {
   "masters": [
-    {
-      "id": "1",
-      "name": "Erasyl"
-    },
-    {
-      "id": "2",
-      "name": "Sanzhar"
-    },
-    {
-      "id": "3",
-      "name": "Daulet"
-    }
-  ],
+  {
+    "id": "1",
+    "name": "Erasyl",
+    "description": "Специалист с более чем 5-летним опытом ремонта бытовой техники. Отлично справляется с диагностикой и устранением сложных поломок холодильников, стиральных машин и микроволновых печей. Быстро, надежно и профессионально."
+  },
+  {
+    "id": "2",
+    "name": "Sanzhar",
+    "description": "Мастер универсал, который знает все о современной бытовой технике. Его специализация — ремонт посудомоечных машин, электроплит и кондиционеров. Всегда внимателен к деталям и предлагает оптимальные решения для любой проблемы."
+  },
+  {
+    "id": "3",
+    "name": "Daulet",
+    "description": "Опытный мастер, который специализируется на ремонте крупной бытовой техники. Его сильные стороны — быстрое выявление неисправностей и качественное восстановление работы техники. Клиенты ценят его за пунктуальность и дружелюбие."
+  }
+],  
   "comments": [
     {
       "id": "1",
       "text": "a comment about post 1",
       "masterId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "masterId": "1"
-    },
-    {
-      "text": "najsndasd",
-      "masterId": "1",
-      "id": "8aUq2WG"
-    },
-    {
-      "text": "хороший мастер!",
-      "masterId": "1",
-      "id": "kkqvr_S"
-    },
-    {
-      "text": "knsdolfnsdf",
-      "masterId": "1",
-      "id": "f9io3JJ"
-    },
-    {
-      "text": "njndjdsfh",
-      "masterId": "1",
-      "id": "7CYQNg9"
-    },
-    {
-      "text": "Hellow ",
-      "masterId": "2",
-      "id": "U_V7xhs"
-    },
-    {
-      "text": "Hello world",
-      "masterId": "2",
-      "id": "I_4kUCf"
-    },
-    {
-      "text": "к котакбас",
-      "masterId": "3",
-      "id": "aNE1PBK"
-    },
-    {
-      "text": "к котакбас",
-      "masterId": "3",
-      "id": "EjP-9EB"
-    },
-    {
-      "text": "jnjhbgvfcfg",
-      "masterId": "3",
-      "id": "3ezPavy"
-    },
-    {
-      "text": "jnjdsf",
-      "masterId": "2",
-      "id": "gPNLuCR"
-    },
-    {
-      "text": "Хорошо работаешь братишка",
-      "masterId": "3",
-      "id": "MJF1MWh"
-    },
-    {
-      "text": "Бляя",
-      "masterId": "3",
-      "id": "wwEiqIo"
-    },
-    {
-      "text": "Hdnf",
-      "masterId": "2",
-      "id": "SrCy8ea"
-    },
-    {
-      "text": "Как ты",
-      "masterId": "2",
-      "id": "UECFCHK"
-    },
-    {
-      "text": "Братишка",
-      "masterId": "2",
-      "id": "iafo8h5"
-    },
-    {
-      "text": "jsdfojsdf",
-      "masterId": "2",
-      "id": "p56acIh"
-    },
-    {
-      "text": "",
-      "masterId": "3",
-      "id": "LZIcd6v"
-    },
-    {
-      "text": "jdsfsdf",
-      "masterId": "2",
-      "id": "XH5aggw"
-    },
-    {
-      "text": "че за хуйня",
-      "masterId": "3",
-      "id": "gkNocwe"
-    },
-    {
-      "text": "e,dnm",
-      "masterId": "3",
-      "id": "jyuCrYU"
-    },
-    {
-      "text": "такк что сказать тебе",
-      "masterId": "1",
-      "id": "bxreumV"
-    },
-    {
-      "text": "ты хороший парень",
-      "masterId": "1",
-      "id": "jO2g5Ep"
-    },
-    {
-      "text": "ирвава",
-      "masterId": "3",
-      "id": "VO2I_Gf"
-    },
-    {
-      "text": "hello world",
-      "masterId": "1",
-      "id": "OsOp_4r"
     }
   ],
   "profile": {

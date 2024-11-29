@@ -3,14 +3,14 @@ import cls from './Intro.module.scss'
 import introImg from 'shared/assets/img/Group 2 (1).png'
 import introBg from 'shared/assets/img/Rectangle 57.png'
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import axios from "axios"
 
 interface IntroProps {
     className?: string
 }
 
-export function Intro({ className }: IntroProps) {
+export const Intro = memo(({ className }: IntroProps) => {
     const [comments, setComments] = useState([])
 
     useEffect(() => {
@@ -69,4 +69,4 @@ export function Intro({ className }: IntroProps) {
             </div>
         </div>
     )
-}
+})

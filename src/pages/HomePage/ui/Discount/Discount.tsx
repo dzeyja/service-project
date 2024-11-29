@@ -3,12 +3,13 @@ import cls from './Discount.module.scss'
 import man from 'shared/assets/img/sp-ok-plumber-min-560x660 2.png'
 import posuda from 'shared/assets/img/503845_images_224829792 2.png'
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button"
+import { memo } from "react"
 
 interface DiscountProps {
     className?: string
 }
 
-export function Discount({ className }: DiscountProps) {
+export const Discount = memo(({ className }: DiscountProps) => {
 
     return (
         <div className={classNames(cls.Discount, {}, [className])}>
@@ -37,4 +38,4 @@ export function Discount({ className }: DiscountProps) {
             </div>
         </div>
     )
-}
+})

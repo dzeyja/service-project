@@ -3,12 +3,13 @@ import cls from './Reviews.module.scss'
 import rev1 from 'shared/assets/icons/61a8f4cd9980b453813a29ec496e32ef_ce_1080x716x0x73_fitted_740x0 1.png'
 import rev2 from 'shared/assets/icons/images 1.png'
 import rev3 from 'shared/assets/icons/Без названия 2.png'
+import { memo } from "react"
 
 interface ReviewsProps {
     className?: string
 }
 
-export function Reviews({ className }: ReviewsProps) {
+export const Reviews = memo(({ className }: ReviewsProps) => {
 
     return (
         <div className="container">
@@ -47,4 +48,4 @@ export function Reviews({ className }: ReviewsProps) {
             </div>
         </div>
     )
-}
+})

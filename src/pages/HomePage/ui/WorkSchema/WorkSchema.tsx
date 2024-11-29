@@ -6,12 +6,13 @@ import StepThree from 'shared/assets/icons/step3 1.svg'
 import StepFour from 'shared/assets/icons/step4 1.svg'
 import StepFive from 'shared/assets/icons/step5 1.svg'
 import StepSix from 'shared/assets/icons/step6 1.svg'
+import { memo } from "react"
 
 interface WorkSchemaProps {
     className?: string
 }
 
-export function WorkSchema({ className }: WorkSchemaProps) {
+export const WorkSchema = memo(({ className }: WorkSchemaProps) => {
 
     return (
         <div className={classNames(cls.WorkSchema, {}, [className])}>
@@ -111,4 +112,4 @@ export function WorkSchema({ className }: WorkSchemaProps) {
             </div>
         </div>
     )
-}
+})
