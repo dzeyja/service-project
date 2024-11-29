@@ -11,6 +11,9 @@ const commentSlice = createSlice({
     name: 'comment',
     initialState,
     reducers: {
+        setAddComment: (state, action) => {
+            state.comments.push(action.payload)
+        }
     },
     extraReducers: (build) => {
         build

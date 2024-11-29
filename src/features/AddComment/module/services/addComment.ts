@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "axios";
 import { AddComSchema } from "../types/AddComSchema";
+import { commentActions } from "entities/Comments";
 
 interface ThunkReturn {
     comment: AddComSchema
@@ -18,7 +19,8 @@ export const addComment = createAsyncThunk<ThunkReturn, ThunkArg>(
             const response = await axios.post('https://json-server-service.onrender.com/comments', {
                 text, masterId
             })
-            console.log(response.data)
+            thunkAPI.dispatch(commentActions.setAddComment({text, masterId}))
+
             return response.data
         } catch (error) {
             const errorMessage = (error as any).message;

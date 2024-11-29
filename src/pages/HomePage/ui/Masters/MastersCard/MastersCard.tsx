@@ -27,8 +27,8 @@ export const MastersCard = memo((props: MastersCardProps) => {
 
     return (
         <div key={master.id} className={classNames(cls.masterCard, {}, [className])}>
-            <h3>{master.name}</h3>
-            <div>{master.description}</div>
+            <div>{master.name}</div>
+            <div className={cls.desc}>{master.description}</div>
             <Button 
                 onClick={handleVisible} 
                 square theme={ButtonTheme.PRIMARY} 
