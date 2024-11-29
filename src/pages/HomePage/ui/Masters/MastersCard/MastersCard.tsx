@@ -31,11 +31,10 @@ export const MastersCard = memo((props: MastersCardProps) => {
             <div className={cls.desc}>{master.description}</div>
             <Button 
                 onClick={handleVisible} 
-                square theme={ButtonTheme.PRIMARY} 
-                size={ButtonSize.M}
+                theme={ButtonTheme.CLEAR}
             >
-                {isVisible ?
-                    'Скрыть комментарий'
+                    {   isVisible 
+                    ? 'Скрыть комментарий'
                     : 'Показать комментарий'}
             </Button>
             {isVisible && 

@@ -4,7 +4,8 @@ import { HTMLAttributes, memo, ReactNode } from "react"
 
 export enum ButtonTheme {
     PRIMARY = 'primary',
-    RED = 'red'
+    RED = 'red',
+    CLEAR = 'clear'
 }
 
 export enum ButtonSize {
@@ -41,7 +42,11 @@ export const Button = memo((props:ButtonProps) => {
     }
 
     return (
-        <button type={submit ? 'submit' : undefined} {...otherProps} className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}>
+        <button 
+            type={submit ? 'submit' : undefined}  
+            className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
+            {...otherProps}
+        >
             {children}
         </button>
     )

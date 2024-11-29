@@ -11,6 +11,15 @@
     color: red;
 }
 
+.clear {
+    font: var(--font-ь);
+    cursor: pointer;
+    color: var(--main-blue);
+    padding: 0;
+    border: none;
+    background: none;
+}
+
 .primary {
     background-color: var(--main-blue);
 }
