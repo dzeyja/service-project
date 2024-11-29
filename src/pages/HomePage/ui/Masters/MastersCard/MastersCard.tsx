@@ -21,9 +21,7 @@ export const MastersCard = memo((props: MastersCardProps) => {
         className
     } = props
 
-    const user = useSelector(getUser)
-
-    const [isVisible, setIsVisible] = useState(true)
+    const [isVisible, setIsVisible] = useState(false)
 
     const handleVisible = () => {
         setIsVisible(!isVisible)
@@ -32,7 +30,7 @@ export const MastersCard = memo((props: MastersCardProps) => {
     return (
         <div key={master.id} className={classNames(cls.masterCard, {}, [className])}>
             <img src={master.img} alt="" />
-            <div>{master.name}</div>
+            <div className={cls.title}>{master.name} Мастер</div>
             <div className={cls.desc}>{master.description}</div>
             <Button 
                 onClick={handleVisible} 
@@ -43,23 +41,25 @@ export const MastersCard = memo((props: MastersCardProps) => {
                     : 'Показать комментарий'}
             </Button>
             {isVisible && 
-              <div className={cls.commentsSection}>
-                {filteredComments.length > 0 ? (
-                  filteredComments.map((comment) => (
-                    <div key={comment.id} className={cls.comment}>
-                        <div className={cls.userName}>
-                          {comment.username}
+            <>
+                <div className={cls.commentsSection}>
+                    {filteredComments.length > 0 ? (
+                      filteredComments.map((comment) => (
+                        <div key={comment.id} className={cls.comment}>
+                            <div className={cls.userName}>
+                              {comment.username}
+                            </div>
+                            <div className={cls.text}>
+                              {comment.text}
+                            </div>
                         </div>
-                        <div className={cls.text}>
-                          {comment.text}
-                        </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className={cls.noComments}>No comments yet</div>
-                )}
+                      ))
+                    ) : (
+                      <div className={cls.noComments}>No comments yet</div>
+                    )}
+                  </div>
                 <AddComForm className={cls.addCom} masterId={master.id}/>
-              </div>
+            </>
             }
         </div>
     )

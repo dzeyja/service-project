@@ -23,7 +23,8 @@
     {
       "id": "1",
       "text": "a comment about post 1",
-      "masterId": "1"
+      "masterId": "1",
+      "username": "dauksh@mail.ru"
     }
   ],
   "profile": {

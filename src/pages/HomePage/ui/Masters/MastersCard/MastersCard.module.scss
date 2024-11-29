@@ -15,9 +15,18 @@
     border: 1px solid var(--main-blue);
 }
 
+.noComments {
+    margin-top: 15px;
+}
+
 .userName {
     font: var(--font-m);
     font-weight: 700;
+}
+
+.title {
+    text-align: left;
+    margin: 15px 0;
 }
 
 .text {
@@ -29,10 +38,12 @@
 }
 
 .commentsSection {
+    margin-top: 15px;
     max-height: 250px;
     overflow-y: auto;
 }
 
 .desc {
     font: var(--font-s);
+    text-align: left;
 }
