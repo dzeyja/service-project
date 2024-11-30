@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { userActions } from "entities/User";
-import { createUserWithEmailAndPassword, User } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, User } from "firebase/auth";
 import { auth } from "shared/config/fireBase/fireBase";
 import { USER_LOCALSTORAGE_KEY } from "shared/consts/localStorage/localStorage";
 
@@ -21,6 +21,12 @@ export const loginByEmail = createAsyncThunk<ThunkReturn, ThunkArg, {rejectValue
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
+            
+            if(user) {
+                await sendEmailVerification(user)
+                console.log('Писмо с подтверждением отправлено!')
+            }
+            
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify({email, password}))
             
             const userAuth = {
@@ -29,7 +35,10 @@ export const loginByEmail = createAsyncThunk<ThunkReturn, ThunkArg, {rejectValue
             }
             
             thunkAPI.dispatch(userActions.setUser(userAuth))
-            return {email: user.email ?? '', uid: user.uid, message: "Регистрация прошла успешно"}; 
+            return {
+                email: user.email ?? '', 
+                uid: user.uid, 
+                message: "Регистрация прошла успешно. Проверьте почту для подтверждения."}; 
         } catch (error) {
             const errorMessage = (error as any).message;
             return thunkAPI.rejectWithValue(errorMessage); 
