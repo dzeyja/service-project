@@ -1,0 +1,16 @@
+.form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.title {
+    font: var(--font-l);
+    text-align: center;
+    font-weight: 700;
+}

@@ -7,9 +7,10 @@ import { memo } from "react"
 
 interface FreeBannerProps {
     className?: string
+    handleOpen: () => void
 }
 
-export const FreeBanner = memo(({ className }: FreeBannerProps) => {
+export const FreeBanner = memo(({ className, handleOpen }: FreeBannerProps) => {
 
     return (
         <div className={classNames(cls.FreeBanner, {}, [className])}>
@@ -31,6 +32,7 @@ export const FreeBanner = memo(({ className }: FreeBannerProps) => {
                             square 
                             size={ButtonSize.M} 
                             theme={ButtonTheme.RED}
+                            onClick={handleOpen}
                         >
                             Заказать мастера
                         </Button>

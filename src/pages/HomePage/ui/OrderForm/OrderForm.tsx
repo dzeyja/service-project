@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import cls from './OrderForm.module.scss'
-import { memo, useRef } from "react"
+import { memo, useRef, useState } from "react"
 import emailjs from '@emailjs/browser';
 import { Input } from "shared/ui/Input/Input";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
@@ -15,10 +15,12 @@ interface OrderFormProps {
 export const OrderForm = memo(({ className }: OrderFormProps) => {
     const form = useRef();
     const dispatch = useDispatch()
+    const [isSending, setIsSending] = useState(false)
 
     const sendEmail = (e: any) => {
         e.preventDefault();
         dispatch(bonusActions.incrementBonus())
+        setIsSending(true)
 
         emailjs
         .sendForm('service_mmo6uzq', 'template_4n125dg', form.current, {
@@ -26,11 +28,14 @@ export const OrderForm = memo(({ className }: OrderFormProps) => {
         })
         .then(
             () => {
-            console.log('SUCCESS!');
+        setIsSending(false)
+        console.log('SUCCESS!');
             },
             (error) => {
             console.log('FAILED...', error.text);
-            },
+        setIsSending(false)
+
+            }
       );
    };
 
@@ -71,7 +76,7 @@ export const OrderForm = memo(({ className }: OrderFormProps) => {
                     size={ButtonSize.M} 
                     onClick={sendEmail}
                 >
-                    Оставить заявку
+                    {isSending ? 'Отправляется...' : 'Оставить заявку'}
                 </Button>
             </form>
          </div>

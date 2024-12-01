@@ -7,10 +7,11 @@ import { memo, useEffect, useState } from "react"
 import axios from "axios"
 
 interface IntroProps {
-    className?: string
+    className?: string,
+    handlerOpen: () => void
 }
 
-export const Intro = memo(({ className }: IntroProps) => {
+export const Intro = memo(({ className, handlerOpen }: IntroProps) => {
     const [comments, setComments] = useState([])
 
     useEffect(() => {
@@ -33,7 +34,7 @@ export const Intro = memo(({ className }: IntroProps) => {
                         <div className={cls.suptitle}>
                             Обходитесь без лишних затрат
                         </div>
-                        <Button square size={ButtonSize.XL} theme={ButtonTheme.PRIMARY}>
+                        <Button onClick={handlerOpen} square size={ButtonSize.XL} theme={ButtonTheme.PRIMARY}>
                             Вызвать мастера
                         </Button>
                         <div className={cls.info}>
