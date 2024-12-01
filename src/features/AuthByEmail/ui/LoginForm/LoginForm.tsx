@@ -62,9 +62,9 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
                     placeholder="Email" 
                     className={cls.input}
                 />
-            <Input 
+                <Input 
                     onChange={handlePasswordChange}
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     className={cls.input}
                 />
