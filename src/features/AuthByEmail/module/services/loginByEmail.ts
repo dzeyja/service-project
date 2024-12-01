@@ -38,7 +38,8 @@ export const loginByEmail = createAsyncThunk<ThunkReturn, ThunkArg, {rejectValue
             return {
                 email: user.email ?? '', 
                 uid: user.uid, 
-                message: "Регистрация прошла успешно. Проверьте почту для подтверждения."}; 
+                message: "Проверьте почту для подтверждения."
+            }; 
         } catch (error) {
             const errorMessage = (error as any).message;
             return thunkAPI.rejectWithValue(errorMessage); 
